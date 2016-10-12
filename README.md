@@ -1,0 +1,44 @@
+## Introduction 
+This is just a simple Android Application to showcase my resume 
+
+## Technology
+* React Native
+
+## It's open for everyone
+If you feel like cloning and make changes to the code, and use it on your own, feel free to do so.
+This is however, a Work-in-Progress. There's still a lot more to be added (besides my information, of course).
+
+If you have any suggestion or recommendation, or anything, just drop a comment in the Issues section, with appropriate label and we'll see how it goes.
+Follow the Installation instruction below, if you're interested in cloning this app.
+
+Cheers.
+<br/>Ikhwan.
+
+# Installation
+## Pre-requisite
+You should have these installed in your machine Doesn't matter whether it's Global or Local installation.
+
+* [node, npm](https://nodejs.org/en/download/)
+* [react-native](https://facebook.github.io/react-native/docs/getting-started.html)
+* [Android Studio](https://developer.android.com/studio/install.html)
+* Android Emulator (i.e: [genymotion](https://www.genymotion.com/download/))
+
+As long as you have those, it should be fine.
+
+
+## Installing
+```
+$ git clone git@github.com:leychay/resume-app.git
+$ cd resume-app
+$ npm install
+```
+
+## Running the application
+```
+$ react-native run-android
+```
+
+* If you got the red screen error during the startup of the application, you may want to try running ``npm start`` in a separate terminal
+
+# Feedback
+* Your feedback is always welcome. Thanks!
