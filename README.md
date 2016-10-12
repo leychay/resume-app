@@ -28,7 +28,7 @@ As long as you have those, it should be fine.
 
 ## Installing
 ```
-$ git clone git@github.com:leychay/resume-app.git
+$ git clone https://github.com/leychay/resume-app.git
 $ cd resume-app
 $ npm install
 ```
