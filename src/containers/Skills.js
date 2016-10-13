@@ -1,7 +1,9 @@
 import React, { Component, PropTypes } from 'react'
-import { View, Text, ListView, ProgressBarAndroid } from 'react-native'
+import { View, Text, ListView, ProgressBarAndroid, StyleSheet } from 'react-native'
 import ScrollableTabView, { ScrollableTabBar } from 'react-native-scrollable-tab-view'
 import { Button, Subheader, COLOR } from 'react-native-material-design'
+import { color } from 'react-native-material-design-styles'
+const colorStyle = StyleSheet.create(color)
 
 import DevIcon from '../components/DevIcon/DevIcon'
 
@@ -31,23 +33,23 @@ export default class Skills extends Component {
          const front = [
          {
              "tech": "jQuery",
-             "icon": "jquery-plain",
+             "icon": "jquery-original-wordmark",
              "level": 5
          }, {
              "tech": "React Native",
-             "icon": "react-original",
+             "icon": "react-original-wordmark",
              "level": 2
          }, {
              "tech": "HTML",
-             "icon": "html5-plain",
+             "icon": "html5-original-wordmark",
              "level": 9
          }, {
              "tech": "CSS",
-             "icon": "css3-plain",
+             "icon": "css3-plain-wordmark",
              "level": 9
          }, {
              "tech": "Bower",
-             "icon": "bower-plain",
+             "icon": "bower-line-wordmark",
              "level": 4
          }]
 
@@ -58,15 +60,15 @@ export default class Skills extends Component {
              "level": 8
          }, {
              "tech": "MySQL",
-             "icon": "mysql-plain",
+             "icon": "mysql-plain-wordmark",
              "level": 7
-         }, {
-             "tech": "Perl",
-             "icon": "php-plain",
-             "level": 3
          }, {
              "tech": "Python",
              "icon": "python-plain",
+             "level": 3
+         }, {
+             "tech": "PostgreSQL",
+             "icon": "postgresql-plain",
              "level": 3
          }]
 
@@ -74,14 +76,14 @@ export default class Skills extends Component {
          {
              'tech': 'CodeIgniter',
              "icon": "codeigniter-plain",
-             'level': 7,
+             'level': 8,
          }, {
              'tech': 'Drupal',
              "icon": "drupal-plain",
              'level': 4,
          }, {
              'tech': 'React',
-             "icon": "react-original",
+             "icon": "react-original-wordmark",
              'level': 3,
          }, {
              'tech': 'Android',
@@ -104,16 +106,20 @@ export default class Skills extends Component {
              'level': 6,
          }, {
              'tech': 'Git',
-             "icon": "git-plain",
+             "icon": "git-plain-wordmark",
              'level': 6,
          }, {
              'tech': 'Apache',
-             "icon": "apache-plain",
+             "icon": "apache-line-wordmark",
              'level': 8,
          }, {
              'tech': 'Vim',
              "icon": "vim-plain",
              'level': 7,
+         }, {
+             'tech': 'Sublime Text',
+             "icon": 'debian-original',
+             'level': 6,
          }]
 
         this.state = {
@@ -142,9 +148,9 @@ export default class Skills extends Component {
              indeterminate={false}
            />
            <View style={[styles.container, styles.row, styles.textWrapper]}>
-             <View style={{ flex: flexOffset }} />
+             <View style={[{ flex: flexOffset }, colorStyle.paperCyanA200]} />
              <View style={{ flex: 1 - (flexOffset) }}>
-                <Text style={styles.level}>{level}</Text>
+                <Text style={[styles.level, colorStyle.paperPinkA200]}>{level}</Text>
              </View>
            </View>
          </View>
@@ -158,10 +164,10 @@ export default class Skills extends Component {
             <View>
             <View style={styles.listItem}>
                 <View style={styles.icons}>
-                    <DevIcon name={props.icon} color={COLOR.googleRed400} size={25} />
+                    <DevIcon name={props.icon} size={25} />
                 </View>
                 <View style={{flex:1}}>
-                    <Text style={styles.text} numberOfLines={1}>{props.tech}</Text>
+                    <Text style={[colorStyle.paperDeepOrangeA400]} numberOfLines={1}>{props.tech}</Text>
 
                     {this.renderProgressBar(props.level)}
                 </View>
@@ -208,7 +214,7 @@ export default class Skills extends Component {
     }
 }
 
-const styles = {
+const styles = StyleSheet.create({
     container: {
       flex: 1
     },
@@ -238,11 +244,10 @@ const styles = {
         backgroundColor: '#8E8E8E',
     },
     level: {
-        color: 'grey',
         fontSize: 11,
         backgroundColor: 'transparent'
     },
     icons: {
         paddingRight: 10
     }
-}
+})
