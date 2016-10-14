@@ -142,13 +142,13 @@ export default class Skills extends Component {
        return (
          <View>
            <ProgressBarAndroid
-             color={COLOR.paperPurple}
+             color="chartreuse"
              styleAttr="Horizontal"
              progress={level / 10}
              indeterminate={false}
            />
            <View style={[styles.container, styles.row, styles.textWrapper]}>
-             <View style={[{ flex: flexOffset }, colorStyle.paperCyanA200]} />
+             <View style={[{ flex: flexOffset }]} />
              <View style={{ flex: 1 - (flexOffset) }}>
                 <Text style={[styles.level, colorStyle.paperPinkA200]}>{level}</Text>
              </View>
@@ -164,7 +164,7 @@ export default class Skills extends Component {
             <View>
             <View style={styles.listItem}>
                 <View style={styles.icons}>
-                    <DevIcon name={props.icon} size={25} />
+                    <DevIcon name={props.icon} color="cornflowerblue" size={25} />
                 </View>
                 <View style={{flex:1}}>
                     <Text style={[colorStyle.paperDeepOrangeA400]} numberOfLines={1}>{props.tech}</Text>
