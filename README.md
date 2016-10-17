@@ -1,10 +1,10 @@
-## Introduction
+# Introduction
 This is just a simple Android Application to showcase my resume
 
-## Technology
+# Technology
 * React Native
 
-## It's open for everyone
+# It's open for everyone
 If you feel like cloning and make changes to the code, and use it on your own, feel free to do so.
 This is however, a Work-in-Progress. There's still a lot more to be added (besides my information, of course).
 
@@ -33,7 +33,7 @@ $ npm install
 ```
 
 ## Post-cloning
-If you wanted to modify this as your own app name, you name to make some modification for the package name in ``android`` directory first, as well as the Class name and AppRegistry Component from ``ikhwanresume`` to ``yourappname``
+If you wanted to modify this as your own app name, you need to make some modification for the package name in ``android`` directory first, as well as the Class name and AppRegistry Component from ``ikhwanresume`` to ``yourappname``
 
 * android/app/src/main/java/com/``ikhwanresume``
 * index.android.js
