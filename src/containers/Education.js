@@ -1,9 +1,16 @@
 import React, { Component, PropTypes } from 'react'
-import { View, Text, Image, IntentAndroid } from 'react-native'
-import { Card, Button, COLOR, TYPO } from 'react-native-material-design'
+import { View, Text, Image, ListView, TouchableNativeFeedback } from 'react-native'
+import { Card, Button, Divider, COLOR, TYPO } from 'react-native-material-design'
 import AppStore from '../stores/AppStore'
 
+import isEqual from 'lodash/isEqual'
+
 export default class Education extends Component {
+
+    constructor(props) {
+        super(props)
+
+    }
 
     static contextTypes = {
         navigator: PropTypes.object.isRequired
@@ -15,29 +22,80 @@ export default class Education extends Component {
 
         return (
             <View>
-                <Card>
-                    <Card.Media
-                        image={<Image source={require('./../img/welcome.jpg')} />}
-                        overlay
-                    >
-                        <Text style={[TYPO.paperFontHeadline, COLOR.paperGrey50]}>About Me</Text>
-                        <Text style={[TYPO.paperSubhead, COLOR.paperGrey50]}>My Resume App</Text>
-                    </Card.Media>
-                    <Card.Body>
-                        <Text>To get started, vist the documentation over at Github! This page is an example of the Card component.</Text>
-                    </Card.Body>
-                    <Card.Actions position="right">
-                        <Button primary={theme} text="GO TO MY SITE" onPress={() => IntentAndroid.openURL('http://www.mohamadikhwan.com')} />
-                    </Card.Actions>
-                </Card>
-                <Card>
-                    <Card.Body>
-                        <Text>Feel free to explore my little app. Nice meeting you (virtually)!</Text>
-                    </Card.Body>
-                </Card>
-                <Button text="Go to child component" primary={theme} onPress={() => { navigator.forward() }} />
+            <View style={styles.container, styles.row}>
+            <TouchableNativeFeedback onPress={() => {
+                navigator.forward('utm')
+            }}>
+            <View style={styles.listItem}>
+                <Text numberOfLines={1}>University of Technology, Malaysia</Text>
             </View>
+            </TouchableNativeFeedback>
+            </View>
+
+            <Divider />
+
+            <View style={styles.container, styles.row}>
+            <TouchableNativeFeedback onPress={() => {
+                navigator.forward('mpcim')
+            }}>
+            <View style={styles.listItem}>
+                <Text numberOfLines={1}>MARA Professional College Indera Mahkota</Text>
+            </View>
+            </TouchableNativeFeedback>
+            </View>
+
+            <Divider />
+
+            <View style={styles.container, styles.row}>
+            <TouchableNativeFeedback onPress={() => {
+                navigator.forward('sahc')
+            }}>
+            <View style={styles.listItem}>
+                <Text numberOfLines={1}>Sultan Abdul Hamid College</Text>
+            </View>
+            </TouchableNativeFeedback>
+            </View>
+
+            <Divider />
+            </View>
+
         )
     }
 
+}
+
+const styles = {
+    container: {
+      flex: 2
+    },
+    row: {
+      flexDirection: 'row'
+    },
+    listItem: {
+        alignItems: 'center',
+        flexDirection: 'row',
+        paddingVertical: 8,
+        paddingHorizontal: 12
+      },
+    content: {
+        padding: 16
+    },
+    textWrapper: {
+        position: 'absolute',
+        left: 0,
+        right: 0,
+        top: -0.5
+    },
+    separator: {
+        flex: 1,
+        height: 0.2,
+        backgroundColor: '#8E8E8E',
+    },
+    level: {
+        fontSize: 11,
+        backgroundColor: 'transparent'
+    },
+    icons: {
+        paddingRight: 10
+    }
 }
