@@ -1,5 +1,5 @@
-## Introduction 
-This is just a simple Android Application to showcase my resume 
+## Introduction
+This is just a simple Android Application to showcase my resume
 
 ## Technology
 * React Native
@@ -25,7 +25,6 @@ You should have these installed in your machine Doesn't matter whether it's Glob
 
 As long as you have those, it should be fine.
 
-
 ## Installing
 ```
 $ git clone https://github.com/leychay/resume-app.git
@@ -33,12 +32,17 @@ $ cd resume-app
 $ npm install
 ```
 
+## Post-cloning
+If you wanted to modify this as your own app name, you name to make some modification for the package name in ``android`` directory first, as well as the Class name and AppRegistry Component from ``ikhwanresume`` to ``yourappname``
+
+* android/app/src/main/java/com/``ikhwanresume``
+* index.android.js
+
 ## Running the application
 ```
+$ npm start (start in a separate terminal)
 $ react-native run-android
 ```
-
-* If you got the red screen error during the startup of the application, you may want to try running ``npm start`` in a separate terminal
 
 # Feedback
 * Your feedback is always welcome. Thanks!
