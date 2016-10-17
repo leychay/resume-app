@@ -26,7 +26,22 @@ export default {
 
     education: {
         title: 'Education Background',
-        component: require('./containers/Education').default
+        component: require('./containers/Education').default,
+
+        children: {
+            utm: {
+                title: 'University of Technology, Malaysia',
+                component: require('./containers/Utm').default
+            },
+            mpcim: {
+                title: 'Mara Professional College Indera Mahkota',
+                component: require('./containers/Mpcim').default
+            },
+            sahc: {
+                title: 'Sultan Abdul Hamid College',
+                component: require('./containers/Sahc').default
+            },
+        }
     },
 
     work: {
