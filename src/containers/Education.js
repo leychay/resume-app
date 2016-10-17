@@ -27,7 +27,10 @@ export default class Education extends Component {
                 navigator.forward('utm')
             }}>
             <View style={styles.listItem}>
-                <Text numberOfLines={1}>University of Technology, Malaysia</Text>
+
+            <View style={{flex:1}}>
+                <Text style={[COLOR.paperPinkA400]} numberOfLines={1}>University of Technology, Malaysia</Text>
+            </View>
             </View>
             </TouchableNativeFeedback>
             </View>
@@ -39,7 +42,9 @@ export default class Education extends Component {
                 navigator.forward('mpcim')
             }}>
             <View style={styles.listItem}>
-                <Text numberOfLines={1}>MARA Professional College Indera Mahkota</Text>
+            <View style={{flex:1}}>
+                <Text style={[COLOR.paperPinkA400]} numberOfLines={1}>MARA Professional College Indera Mahkota</Text>
+            </View>
             </View>
             </TouchableNativeFeedback>
             </View>
@@ -51,7 +56,9 @@ export default class Education extends Component {
                 navigator.forward('sahc')
             }}>
             <View style={styles.listItem}>
-                <Text numberOfLines={1}>Sultan Abdul Hamid College</Text>
+            <View style={{flex:1}}>
+                <Text style={[COLOR.paperPinkA400]} numberOfLines={1}>Sultan Abdul Hamid College</Text>
+            </View>
             </View>
             </TouchableNativeFeedback>
             </View>
@@ -96,6 +103,8 @@ const styles = {
         backgroundColor: 'transparent'
     },
     icons: {
+        width: 25,
+        height: 25,
         paddingRight: 10
     }
 }
