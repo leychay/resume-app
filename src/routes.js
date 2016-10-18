@@ -46,7 +46,30 @@ export default {
 
     work: {
         title: 'Working Experience',
-        component: require('./containers/Work').default
+        component: require('./containers/Work').default,
+
+        children: {
+            frogasia: {
+                title: 'FrogAsia',
+                component: require('./containers/Frogasia').default
+            },
+            psl: {
+                title: 'P\S\L Group (PeerHealth Sdn Bhd)',
+                component: require('./containers/Psl').default
+            },
+            techsenseweb: {
+                title: 'Techsense Group',
+                component: require('./containers/Techsense').default
+            },
+            techsensesolution: {
+                title: 'Techsense Group',
+                component: require('./containers/Techsense').default
+            },
+            callbiz: {
+                title: 'CallBiz (Sapura Marketing)',
+                component: require('./containers/Callbiz').default
+            }
+        }
     }
 
 }
