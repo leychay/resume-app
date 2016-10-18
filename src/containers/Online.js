@@ -48,6 +48,11 @@ export default class Online extends Component {
                 </Icon.Button>
                 <Divider style={styles.break} />
 
+                <Icon.Button name="envelope" backgroundColor="grey" onPress={() => Linking.openURL('mailto:ikhwan@mohamadikhwan.com')}>
+                Mail me!
+                </Icon.Button>
+                <Divider style={styles.break} />
+
                 </View>
 
             </View>
