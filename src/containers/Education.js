@@ -10,6 +10,33 @@ export default class Education extends Component {
     constructor(props) {
         super(props)
 
+        const ds = new ListView.DataSource({rowHasChanged: isEqual })
+
+        const education = [
+        {
+            "institute": "University of Technology, Malaysia",
+            "qualification": "BCS. Software Engineering",
+            "duration": "2009 - 2015",
+            "route": "utm",
+            "logoLink": "http://ihce.utm.my/files/2015/12/utm-logo.gif"
+        }, {
+            "institute": "Mara Professional College Indera Mahkota",
+            "qualification": "HND - Business Information Technology",
+            "duration": "2004 - 2008",
+            "route": "mpcim",
+            "logoLink": "http://1.bp.blogspot.com/_4p1ERqFM4wY/SS5_qLksICI/AAAAAAAAACA/Q3XvC37-09g/S264/LOGO+KPMIM.jpg"
+        }, {
+            "institute": "Sultan Abdul Hamid College",
+            "qualification": "Secondary School",
+            "duration": "1999 - 2003",
+            "route": "sahc",
+            "logoLink": "https://upload.wikimedia.org/wikipedia/en/1/18/Ksah.png"
+        }
+        ]
+
+        this.state = {
+            dataSource: ds.cloneWithRows(education)
+        }
     }
 
     static contextTypes = {
@@ -20,50 +47,38 @@ export default class Education extends Component {
         const { navigator } = this.context
         const theme = AppStore.getState().theme
 
+        const { dataSource } = this.state
+
+        const Row = (props) => (
+            <View>
+                <TouchableNativeFeedback
+                onPress={() => {navigator.forward(props.route)}}>
+                <View style={styles.listItem}>
+                <View style={styles.icons}>
+                    <Image source={{uri: props.logoLink}}
+                    style={{width: 50, height: 50}} />
+                </View>
+                <View style={{flex:1}}>
+                    <Text style={[TYPO.paperFontSubhead, COLOR.paperPinkA400]}>{props.institute}</Text>
+                    <View>
+                        <Text style={[TYPO.paperFontBody1, COLOR.paperPinkA200]}>{props.qualification}</Text>
+                    </View>
+                    <View>
+                    <Text style={[TYPO.paperFontCaption, COLOR.paperPinkA100]}>{props.duration}</Text>
+                    </View>
+                </View>
+                </View>
+                </TouchableNativeFeedback>
+            </View>
+        )
         return (
             <View>
-            <View style={styles.container, styles.row}>
-            <TouchableNativeFeedback onPress={() => {
-                navigator.forward('utm')
-            }}>
-            <View style={styles.listItem}>
-
-            <View style={{flex:1}}>
-                <Text style={[COLOR.paperPinkA400]} numberOfLines={1}>University of Technology, Malaysia</Text>
-            </View>
-            </View>
-            </TouchableNativeFeedback>
-            </View>
-
-            <Divider />
-
-            <View style={styles.container, styles.row}>
-            <TouchableNativeFeedback onPress={() => {
-                navigator.forward('mpcim')
-            }}>
-            <View style={styles.listItem}>
-            <View style={{flex:1}}>
-                <Text style={[COLOR.paperPinkA400]} numberOfLines={1}>MARA Professional College Indera Mahkota</Text>
-            </View>
-            </View>
-            </TouchableNativeFeedback>
-            </View>
-
-            <Divider />
-
-            <View style={styles.container, styles.row}>
-            <TouchableNativeFeedback onPress={() => {
-                navigator.forward('sahc')
-            }}>
-            <View style={styles.listItem}>
-            <View style={{flex:1}}>
-                <Text style={[COLOR.paperPinkA400]} numberOfLines={1}>Sultan Abdul Hamid College</Text>
-            </View>
-            </View>
-            </TouchableNativeFeedback>
-            </View>
-
-            <Divider />
+            <ListView
+                dataSource={dataSource}
+                renderRow={(rowData) => <Row {...rowData} />}
+                renderSeparator={(sectionId, rowId) => <View key={rowId} style={styles.separator} />}
+            >
+            </ListView>
             </View>
 
         )
@@ -103,8 +118,6 @@ const styles = {
         backgroundColor: 'transparent'
     },
     icons: {
-        width: 25,
-        height: 25,
-        paddingRight: 10
+        paddingRight: 20
     }
 }
